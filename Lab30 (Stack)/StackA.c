@@ -1,6 +1,6 @@
-#include "StackA.h"
+ï»¿#include "StackA.h"
 
-// Èíèöèàëèçèðóåò ñòåê stack èç count ýëåìåíòîâ.
+// Ð˜Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÑ‚ ÑÑ‚ÐµÐº stack Ð¸Ð· count ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð².
 void stackInit(StackA* stack, int count)
 {
     if (stack->next = (double*)malloc(sizeof(double) * count))
@@ -11,7 +11,7 @@ void stackInit(StackA* stack, int count)
     stack->top = -1;
 }
 
-// Âûâîäèò ýëåìåíòû ñòåêà stack íà ýêðàí.
+// Ð’Ñ‹Ð²Ð¾Ð´Ð¸Ñ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÑÑ‚ÐµÐºÐ° stack Ð½Ð° ÑÐºÑ€Ð°Ð½.
 void stackPrint(StackA const* stack)
 {
     int i;
@@ -20,7 +20,7 @@ void stackPrint(StackA const* stack)
     printf("\n");
 }
 
-// Óíè÷òîæàåò ñòåê stack.
+// Ð£Ð½Ð¸Ñ‡Ñ‚Ð¾Ð¶Ð°ÐµÑ‚ ÑÑ‚ÐµÐº stack.
 void stackDestruct(StackA* stack)
 {
     if (stack->next) free(stack->next);
@@ -28,7 +28,7 @@ void stackDestruct(StackA* stack)
     stack->top = -1;
 }
 
-// Äîáàâëÿåò ýëåìåíò element â ñòåê stack.
+// Ð”Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ element Ð² ÑÑ‚ÐµÐº stack.
 int stackPush(StackA* stack, double element)
 {
     if (stack->top >= stack->count - 1) return 0;
@@ -37,7 +37,7 @@ int stackPush(StackA* stack, double element)
     return 1;
 }
 
-// Óäàëÿåò ýëåìåíò èç ñòåêà stack è âîçâðàùàåò åãî.
+// Ð£Ð´Ð°Ð»ÑÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¸Ð· ÑÑ‚ÐµÐºÐ° stack Ð¸ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÐµÐ³Ð¾.
 double stackPop(StackA* stack)
 {
     if (stack->top >= 0)
@@ -46,7 +46,7 @@ double stackPop(StackA* stack)
     else return 1e300;
 }
 
-// Âîçâðàùàåò ýëåìåíò èç ñòåêà stack áåç åãî óäàëåíèÿ.
+// Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¸Ð· ÑÑ‚ÐµÐºÐ° stack Ð±ÐµÐ· ÐµÐ³Ð¾ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ.
 double stackPeek(StackA const* stack)
 {
     if (stack->top >= 0)
@@ -54,13 +54,13 @@ double stackPeek(StackA const* stack)
     else return 1e300;
 }
 
-// Î÷èùàåò ñòåê stack.
-void stackClear(StackA* stack) //î÷èñòêà ñòåêà
+// ÐžÑ‡Ð¸Ñ‰Ð°ÐµÑ‚ ÑÑ‚ÐµÐº stack.
+void stackClear(StackA* stack) //Ð¾Ñ‡Ð¸ÑÑ‚ÐºÐ° ÑÑ‚ÐµÐºÐ°
 {
     stack->top = -1;
 }
 
-// Ïðîâåðÿåò ñòåê íà íàëè÷èå ýëåìåíòîâ.
+// ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ ÑÑ‚ÐµÐº Ð½Ð° Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð².
 int isStackEmpty(StackA const* stack)
 {
     if (stack->top < 0) return 1;
